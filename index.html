@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Pontikis Paginator</title>
+
+    <!--  JQUERY -->
+    <script type="text/javascript" src="jquery-1.11.3.js"></script>
+
+    <!--  BOOTSTRAP -->
+    <link rel="stylesheet" type="text/css" href="theme.css">
+
+
+    <!--  PAGINATION plugin -->
+    <link rel="stylesheet" type="text/css" href="jquery.bs_pagination.min.css">
+    <script type="text/javascript" src="jquery.bs_pagination.min.js"></script>
+    <script type="text/javascript" src="localization/de.min.js"></script>
+</head>
+<body>
+    <div id="demo_pag1"></div>
+
+    <script type="text/javascript">
+        $(function() {
+
+            $("#demo_pag1").bs_pagination({
+                currentPage: 1, // momentane Seite
+                rowsPerPage: 10, // Zeilen per Seite
+                maxRowsPerPage: 100, // maximale Anzahl Zeilen pro Seite
+                totalPages: 100, // absolute Anzahl Seiten
+                totalRows: 0,
+
+                visiblePageLinks: 5, // Darstellung der Seitenanzahl
+
+                // Anzeige von Elementen
+                showGoToPage: true, // Anzeige 'gehe zur Seite'
+                showRowsPerPage: true, // Anzeige 'Zeilen pro Seite'
+                showRowsInfo: true, // Anzeige 'Seite von Anzahl Seiten'
+                showRowsDefaultInfo: true, // Anzeige 'Seite von Anzahl Seiten'
+
+                directURL: false, // or a function with current page as argument
+                disableTextSelectionInNavPane: true, // disable text selection and double click
+
+                bootstrap_version: "3",
+
+                // bootstrap 3
+                containerClass: "well",
+
+                mainWrapperClass: "row",
+
+                navListContainerClass: "col-xs-12 col-sm-12 col-md-6",
+                navListWrapperClass: "",
+                navListClass: "pagination pagination_custom",
+                navListActiveItemClass: "active",
+
+                navGoToPageContainerClass: "col-xs-6 col-sm-4 col-md-2 row-space",
+                navGoToPageIconClass: "glyphicon glyphicon-arrow-right",
+                navGoToPageClass: "form-control small-input",
+
+                navRowsPerPageContainerClass: "col-xs-6 col-sm-4 col-md-2 row-space",
+                navRowsPerPageIconClass: "glyphicon glyphicon-th-list",
+                navRowsPerPageClass: "form-control small-input",
+
+                navInfoContainerClass: "col-xs-12 col-sm-4 col-md-2 row-space",
+                navInfoClass: "",
+
+                // element IDs
+                nav_list_id_prefix: "nav_list_",
+                nav_top_id_prefix: "top_",
+                nav_prev_id_prefix: "prev_",
+                nav_item_id_prefix: "nav_item_",
+                nav_next_id_prefix: "next_",
+                nav_last_id_prefix: "last_",
+
+                nav_goto_page_id_prefix: "goto_page_",
+                nav_rows_per_page_id_prefix: "rows_per_page_",
+                nav_rows_info_id_prefix: "rows_info_",
+
+                onChangePage: function(event, data)
+                {
+                    alert('Seite:' + data.currentPage + ' Zeilen pro Seite: ' + data.rowsPerPage);
+                }
+            });
+
+        });
+    </script>
+</body>
+</html>
